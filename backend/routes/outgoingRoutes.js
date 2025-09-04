@@ -133,8 +133,8 @@ const newChallan = new OutgoingChallan({
 
         // normalize: if missing set defaults
         const dir = direction === "Receive" ? "Receive" : "Send";
-        const sending = sendingLocation || (dir === "Send" ? "Phulnakhara" : "Phulnakhara");
-        const receiving = receivingLocation || (dir === "Receive" ? "Phulnakhara" : "Phulnakhara");
+        const sending = sendingLocation || (dir === "Send" ? "Mancheswar" : "Mancheswar");
+        const receiving = receivingLocation || (dir === "Receive" ? "Mancheswar" : "Mancheswar");
 
         // Save a Physical Request doc (group all items in single doc)
         const physDoc = new PhysicalReq({

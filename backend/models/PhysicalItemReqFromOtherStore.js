@@ -7,8 +7,8 @@ const physItemSchema = new mongoose.Schema({
   createdAt: { type: Date, default: Date.now },
 
   direction: { type: String, enum: ["Send", "Receive"], required: true },
-  sendingLocation: { type: String, default: "Phulnakhara" },   // where it's sent from
-  receivingLocation: { type: String, default: "Phulnakhara" }, // where it's to be received
+  sendingLocation: { type: String, default: "Mancheswar" },   // where it's sent from
+  receivingLocation: { type: String, default: "Mancheswar" }, // where it's to be received
 
   // minimal item array (no customer delivery fields as requested)
   items: [

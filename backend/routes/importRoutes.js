@@ -116,8 +116,8 @@ router.post("/bulk/upsert", async (req, res) => {
           deliveryAddress: raw.deliveryAddress || "",
           phoneNumber: raw.phoneNumber || "",
 
-          dispatch_center: raw.dispatch_center || "Phulnakhara",
-          order_created_from_location: raw.order_created_from_location || "Phulnakhara",
+          dispatch_center: raw.dispatch_center || "Mancheswar",
+          order_created_from_location: raw.order_created_from_location || "Mancheswar",
 
           decidedToBeDispatched: qty,
           remainingToBeDispatched: qty, // alreadyDispatched starts at 0
@@ -225,8 +225,8 @@ router.post("/bulk/replace", async (req, res) => {
           deliveryAddress: raw.deliveryAddress || "",
           phoneNumber: raw.phoneNumber || "",
 
-          dispatch_center: raw.dispatch_center || "Phulnakhara",
-          order_created_from_location: raw.order_created_from_location || "Phulnakhara",
+          dispatch_center: raw.dispatch_center || "Mancheswar",
+          order_created_from_location: raw.order_created_from_location || "Mancheswar",
 
           decidedToBeDispatched: qty,
           remainingToBeDispatched: qty,
@@ -247,10 +247,10 @@ router.post("/bulk/replace", async (req, res) => {
 });
 
 
-// ✅ Get all items for Phulnakhara dispatch center
+// ✅ Get all items for Mancheswar dispatch center
 router.get("/pending", async (req, res) => {
   try {
-    const center = req.query.center || "Phulnakhara";
+    const center = req.query.center || "Mancheswar";
     const items = await ToBeImportedFromStore.find({ dispatch_center: center });
     res.json(items);
   } catch (err) {
@@ -476,7 +476,7 @@ router.post("/updateOrAdd", async (req, res) => {
       saleId,
       productId: d.productId,
       subProductId: normId(d.subProductId),
-      dispatch_center: d.dispatch_center || "Phulnakhara",
+      dispatch_center: d.dispatch_center || "Mancheswar",
     });
 
     const product = await Product.findOne({ productCode: d.productCode });
@@ -529,7 +529,7 @@ subProductImage: d.subProductCode
   : "",
           qtyReturned: returnQty,
           dispatch_center: d.dispatch_center,
-          order_created_from_location: d.order_created_from_location || "Phulnakhara",
+          order_created_from_location: d.order_created_from_location || "Mancheswar",
         });
         await ret.save();
 
@@ -593,11 +593,11 @@ router.get("/returns/list", async (req, res) => {
   }
 });
 
-// GET physical-reqs (filter by receivingLocation, default Phulnakhara)
+// GET physical-reqs (filter by receivingLocation, default Mancheswar)
 router.get("/physical-reqs", async (req, res) => {
   try {
     const PhysicalReq = require("../models/PhysicalItemReqFromOtherStore");
-    const receiving = req.query.receiving || "Phulnakhara";
+    const receiving = req.query.receiving || "Mancheswar";
 
     const docs = await PhysicalReq.find({ receivingLocation: receiving }).sort({ createdAt: -1 }).lean();
     res.json(docs);

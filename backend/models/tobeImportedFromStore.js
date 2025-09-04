@@ -17,8 +17,8 @@ subProductImage: { type: String, default: "" },
   deliveryAddress: String,
   phoneNumber: String,
 
-  dispatch_center: { type: String, enum: ["Mancheswar", "SaheedNagar" , "Phulnakhara"], required: true },
-  order_created_from_location: { type: String, default: "Phulnakhara" },
+  dispatch_center: { type: String, enum: ["Mancheswar", "SaheedNagar" , "Mancheswar"], required: true },
+  order_created_from_location: { type: String, default: "Mancheswar" },
 
   // tracking dispatch workflow
   decidedToBeDispatched: { type: Number, default: 0 },

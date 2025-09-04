@@ -30,8 +30,8 @@ const outgoingChallanSchema = new mongoose.Schema({
   movementType: { type: String },
   // NEW fields for InterStore
   direction: { type: String, enum: ["Send", "Receive"], default: null },
-  sendingLocation: { type: String, default: "Phulnakhara" },
-  receivingLocation: { type: String, default: "Phulnakhara" },
+  sendingLocation: { type: String, default: "Mancheswar" },
+  receivingLocation: { type: String, default: "Mancheswar" },
   
   createdAt: { type: Date, default: Date.now }
 });

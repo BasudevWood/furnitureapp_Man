@@ -19,7 +19,7 @@ subProductImage: { type: String, default: "" },
   phoneNumber: String,
 
   dispatch_center: { type: String },
-  order_created_from_location: { type: String, default: "Phulnakhara" },
+  order_created_from_location: { type: String, default: "Mancheswar" },
 
   dispatchedAt: { type: Date, default: Date.now }
 });
