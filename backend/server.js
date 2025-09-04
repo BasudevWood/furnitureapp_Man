@@ -125,7 +125,7 @@ cron.schedule("59 23 * * *", async () => {
 
 // MongoDB
 mongoose.connect(
-  'mongodb+srv://admin:Doremon609@cluster0.henx4qg.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0',
+  'mongodb+srv://admin:Doremon609@cluster0.henx4qg.mongodb.net/furnitureapp_man_db?retryWrites=true&w=majority&appName=Cluster0',
   { useNewUrlParser: true, useUnifiedTopology: true }
 )
 .then(async () => {
