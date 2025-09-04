@@ -1,0 +1,24 @@
+const mongoose = require("mongoose");
+
+const paymentsSchema = new mongoose.Schema({
+  saleId: { type: mongoose.Schema.Types.ObjectId, ref: "Sale" },
+  customerName: String,
+  phoneNumber: String,
+  paymentMode: { type: String, enum: ["Cash", "BANK BW", "UPI Staff"], required: true },
+  paymentMadeThrough: { 
+  type: String, 
+   enum: ["Walk-in", "Through Staff", "From Staff UPI", "BANK BW"], // 🆕 added BANK BW
+  default: "Walk-in" 
+},
+  staffName: String,
+  proofFile: String, // file path if BANK BW / UPI Staff
+  paymentAmount: { type: Number, required: true },
+  dateOfPayment: { type: Date, required: true },
+  tag_payment: { 
+  type: String, 
+  enum: ["Advance Payment", "Partial Payment", "Staff UPI Collection"], 
+  required: true 
+}
+}, { timestamps: true });
+
+module.exports = mongoose.model("Payment", paymentsSchema);
